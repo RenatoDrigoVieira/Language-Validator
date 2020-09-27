@@ -18,8 +18,8 @@ public class validator {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        Stack<Character> pilhaCaracteres = new Stack<>();
         Scanner scan = new Scanner(System.in);
-        Stack<Character> pilha = new Stack<>();
         String palavra = scan.next();
         Boolean falha = false;
         char charPilha;
@@ -28,37 +28,37 @@ public class validator {
         OUTER:
         for (int i = 0; i < palavra.length(); i++) {
             switch (palavra.charAt(i)) {
-                case '[':
                 case '(':
-                case '{':
+                case '[':
                 case '<':
-                    pilha.push(palavra.charAt(i));
+                case '{':
+                    pilhaCaracteres.push(palavra.charAt(i));
                     break;
-                case ']':
                 case ')':
-                case '}':
                 case '>':
-                    if (pilha.empty()) {
-                        System.out.println("Palavra inválida");
+                case '}':
+                case ']':
+                    if (pilhaCaracteres.empty()) {
+                        System.out.println("Palavra não aceita");
                         falha = true;
                         break OUTER;
                     }
-                    charPilha = pilha.pop();
-                    if ((charPilha == '[' && palavra.charAt(i) == ']') || (charPilha == '{' && palavra.charAt(i) == '}') || (charPilha == '(' && palavra.charAt(i) == ')')
-                            || (charPilha == '<' && palavra.charAt(i) == '>')) {
+                    charPilha = pilhaCaracteres.pop();
+                    if ( (charPilha == '<' && palavra.charAt(i) == '>')||  (charPilha == '{' && palavra.charAt(i) == '}') || (charPilha == '[' && palavra.charAt(i) == ']')|| (charPilha == '(' && palavra.charAt(i) == ')')
+                            ) {
                         continue;
                     }   falha = true;
-                    System.out.println("Palavra inválida");
+                    System.out.println("Palavra não aceita");
                     break OUTER;
                 default:
                     falha = true;
-                    System.out.println("Caracteres inválidos detectados");
+                    System.out.println("Caracteres inválidos");
                     break OUTER;
             }
         }
         
         if(!falha){
-            System.out.println("Palavra válida");
+            System.out.println("Palavra aceita");
         }
         
     }
