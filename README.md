@@ -1,5 +1,5 @@
 # Language-Validator
-Projeto de Compiladores, EC6
+Projeto de Compiladores, EC6 - Renato Drigo Vieira - 081180038
 
 ## Funcionamento :book:
 
