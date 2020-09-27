@@ -9,14 +9,14 @@ Palavra que a palavra seja válida ela deve conter apenas estes caracteres: (,[,
 
 Exemplos de palavras válidas e palavras inválidas:
   
-  (((((([]))))))
-  Palavra válida
-  {[[()]()]}}
-  Palavra válida
-  {[[([)]]]}
-  Palavra inválida
-  <{(())}>
-  Palavra válida
-  {<[]()[[]]<>>}
-  Palavra válida
+ - (((((([]))))))
+ - Palavra válida
+ - {[[()]()]}}
+ - Palavra válida
+ - {[[([)]]]}
+ - Palavra inválida
+ - <{(())}>
+ - Palavra válida
+ - {<[]()[[]]<>>}
+ - Palavra válida
 
